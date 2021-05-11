@@ -1,5 +1,5 @@
-public class MyFirstGame{
-    public static void main(String[] args){
+public class MyFirstGame {
+    public static void main(String[] args) {
         //Диапозон поиска, изменяемый
         int x1 = 0;
         int x2 = 100;
@@ -13,7 +13,7 @@ public class MyFirstGame{
                 System.out.println("Данное число(" + ourNumber + ") больше того, что загадал компьютер");
                 x2 = ourNumber;
                 ourNumber = x1;
-            }else if(ourNumber < compNumber){
+            } else if(ourNumber < compNumber){
                 System.out.println("Данное число(" + ourNumber + ") меньше того, что загадал компьютер");
                 x1 = ourNumber;
             }
