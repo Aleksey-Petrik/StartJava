@@ -11,7 +11,7 @@ public class Calculator {
         if (action == '%') result = a % b;
         if (action == '^') {
             result = a;
-            for(int i = 1; i < b; i++) result *= a;
+            for (int i = 1; i < b; i++) result *= a;
         }
         System.out.println(a + " " + action + " " + b + " = " + result);
     }

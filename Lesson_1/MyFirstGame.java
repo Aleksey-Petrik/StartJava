@@ -13,7 +13,7 @@ public class MyFirstGame {
                 System.out.println("Данное число(" + ourNumber + ") больше того, что загадал компьютер");
                 x2 = ourNumber;
                 ourNumber = x1;
-            } else if(ourNumber < compNumber){
+            } else if (ourNumber < compNumber){
                 System.out.println("Данное число(" + ourNumber + ") меньше того, что загадал компьютер");
                 x1 = ourNumber;
             }

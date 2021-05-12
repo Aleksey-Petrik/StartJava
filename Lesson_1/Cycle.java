@@ -1,13 +1,13 @@
 public class Cycle {
     public static void main(String[] args) {
         System.out.println("Cycle FOR");
-        for(int i = 0; i < 21; i++){
+        for (int i = 0; i < 21; i++){
             System.out.print(i + " ");
         }
 
         int counter = 6;
         System.out.println("\n" + "Cycle WILE");
-        while(counter > -7){
+        while (counter > -7){
             System.out.print(counter + " ");
             counter -= 2;
         }
