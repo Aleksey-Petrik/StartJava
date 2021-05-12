@@ -10,8 +10,4 @@ public class Player {
     public String getName() {
         return name;
     }
-
-    public int inNumber(Scanner scanner) {
-        return scanner.nextInt();
-    }
 }
