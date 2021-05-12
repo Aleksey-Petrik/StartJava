@@ -1,13 +1,13 @@
 public class Calculator {
-    public double calc(int a, int b, char action) {
+    public double calculate(int a, int b, char action) {
         double result = 0;
         switch(action) {
-            case('+'): result = a + b; break;
-            case('-'): result = a - b; break;
-            case('*'): result = a * b; break;
-            case('/'): result = (double) a / b; break;
-            case('%'): result = a % b; break;
-            case('^'): {
+            case '+' : result = a + b; break;
+            case '-' : result = a - b; break;
+            case '*' : result = a * b; break;
+            case '/' : result = (double) a / b; break;
+            case '%' : result = a % b; break;
+            case '^' : {
                 result = a;
                 for (int i = 1; i < b; i++) result *= a; 
                 break;
