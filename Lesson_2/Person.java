@@ -1,7 +1,8 @@
 public class Person {
     char sex = 'M';
     String name = "Jon Jonson";
-    float height = 1.75f, weight = 75f;
+    float height = 1.75f;
+    float weight = 75f;
     int age = 34;
 
     public static void main(String[] args) {
