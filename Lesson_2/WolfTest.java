@@ -3,12 +3,12 @@ public class WolfTest {
         Wolf wolf = new Wolf();
 
         wolf.setSex('M');
-        wolf.setNickName("Alha");
+        wolf.setNickname("Alha");
         wolf.setWeight(120);
         wolf.setAge(7);
         wolf.setColor("black");
 
-        System.out.println("Кличка - " + wolf.getNickName());
+        System.out.println("Кличка - " + wolf.getNickname());
         System.out.println("Пол - " + wolf.getSex());
         System.out.println("Вес - " + wolf.getWeight());
         System.out.println("Возраст - " + wolf.getAge());
