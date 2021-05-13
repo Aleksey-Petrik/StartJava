@@ -8,10 +8,11 @@ public class JaegerTest {
         jaeger1.setWeight(1.722f);
         jaeger1.setStrength(8);
         jaeger1.setArmor(6);
-        System.out.println(jaeger1.modelName + " " + jaeger1.mark);
+
+        System.out.println(jaeger1.getModelName() + " " + jaeger1.getMark());
         if (jaeger1.drift()) jaeger1.move();
-        jaeger1.mark = "Mark-5";
-        System.out.println(jaeger1.modelName + " " + jaeger1.mark);
+        jaeger1.setMark("Mark-5");
+        System.out.println(jaeger1.getModelName() + " " + jaeger1.getMark());
 
         Jaeger jaeger2 = new Jaeger();
         jaeger2.setModelName("Hydra Corinthian");
@@ -21,7 +22,8 @@ public class JaegerTest {
         jaeger2.setWeight(1.829f);
         jaeger2.setStrength(9);
         jaeger2.setArmor(8);
-        System.out.println(jaeger2.modelName + " " + jaeger2.mark);
+        
+        System.out.println(jaeger2.getModelName() + " " + jaeger2.getMark());
         if (jaeger2.drift()) jaeger2.useVortexCannon();
     }
 }
