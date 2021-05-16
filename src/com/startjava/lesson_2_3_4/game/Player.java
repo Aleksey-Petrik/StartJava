@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int countWins = 0;
     private int countSteps = 0;
     private int[] stepsArr = new int[GuessNumber.MAX_COUNT_STEPS];
 
@@ -14,18 +13,6 @@ public class Player {
 
     public String getName() {
         return name;
-    }
-
-    public void setCountWins(boolean win) {
-        if (win) countWins++;
-    }
-    
-    public int getCountWins() {
-        return countWins;
-    }
-
-    public int getCountSteps() {
-        return countSteps;
     }
     
     public void clrSteps() {

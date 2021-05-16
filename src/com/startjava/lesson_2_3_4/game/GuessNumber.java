@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumber {
-    public static final int MAX_COUNT_STEPS = 3;
+    public static final int MAX_COUNT_STEPS = 10;
 
     private Player firstPlayer;
     private Player secondPlayer;
@@ -46,7 +46,6 @@ public class GuessNumber {
             } else {
                 System.out.println("\nИгрок " + currentPlayer.getName() + " угадал число " + 
                         playerNumber + " с " + gameStep + " попытки\n");
-                currentPlayer.setCountWins(true);
                 break;
             }
             gameStep = currentStep(++i, gameStep);
