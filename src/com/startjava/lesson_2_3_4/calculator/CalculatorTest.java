@@ -10,22 +10,16 @@ public class CalculatorTest {
         String question = "yes";
         do {
             if ("yes".equals(question)) {
-                System.out.print("\nВведите первое число: ");
-                int a = scanner.nextInt();
-                
-                System.out.print("Введите знак математической операции: ");
-                char action = scanner.next().charAt(0);
-                
-                System.out.print("Введите второе число: ");
-                int b = scanner.nextInt();
+                System.out.print("Введите математическое выражение: ");
+                String[] strMath = scanner.nextLine().split(" ");
+
+                int a = Integer.parseInt(strMath[0]);
+                int b = Integer.parseInt(strMath[2]);
+                char action = strMath[1].charAt(0);
                 
                 System.out.println(a + " " + action + " " + b + " = " + calculator.calculate(a, b, action));
-                question = "";
             }
             System.out.print("\nХотите продолжить вычисления? [yes/no]:");
-        } while (!"no".equals(question = scanner.next()));
+        } while (!"no".equals(question = scanner.nextLine()));
     }
 }
-
-
-
