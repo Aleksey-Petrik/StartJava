@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int countSteps = 0;
-    private int[] stepsArr = new int[GuessNumber.MAX_COUNT_STEPS];
+    private int[] enteredNumbers = new int[GuessNumber.MAX_COUNT_STEPS];
 
     public Player(String name) {
         this.name = name;
@@ -15,16 +15,16 @@ public class Player {
         return name;
     }
     
-    public void clrSteps() {
-        Arrays.fill(stepsArr, 0, countSteps, 0);
+    public void clearNumbers() {
+        Arrays.fill(enteredNumbers, 0, countSteps, 0);
     }
     
-    public void saveStep(int number, int step) {
-        stepsArr[step - 1] = number;
-        countSteps = step;
+    public void setNumber(int number, int step) {
+        enteredNumbers[step - 1] = number;
+        countSteps++;
     }
     
-    public int[] shoAllSteps() {
-        return Arrays.copyOf(stepsArr, countSteps);
+    public int[] getEnteredNumbers() {
+        return Arrays.copyOf(enteredNumbers, countSteps);
     }
 }

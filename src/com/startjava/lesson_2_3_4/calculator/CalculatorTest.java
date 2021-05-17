@@ -7,19 +7,15 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-        String question = "yes";
+        String yesOrNo = "yes";
         do {
-            if ("yes".equals(question)) {
+            if ("yes".equals(yesOrNo)) {
                 System.out.print("Введите математическое выражение: ");
-                String[] strMath = scanner.nextLine().split(" ");
+                String strMath = scanner.nextLine();
 
-                int a = Integer.parseInt(strMath[0]);
-                int b = Integer.parseInt(strMath[2]);
-                char action = strMath[1].charAt(0);
-                
-                System.out.println(a + " " + action + " " + b + " = " + calculator.calculate(a, b, action));
+                System.out.println(strMath + " = " + calculator.calculate(strMath));
             }
             System.out.print("\nХотите продолжить вычисления? [yes/no]:");
-        } while (!"no".equals(question = scanner.nextLine()));
+        } while (!"no".equals(yesOrNo = scanner.nextLine()));
     }
 }
