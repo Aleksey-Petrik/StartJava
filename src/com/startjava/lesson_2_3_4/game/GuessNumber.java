@@ -3,7 +3,7 @@ package com.startjava.lesson_2_3_4.game;
 import java.util.Scanner;
 
 public class GuessNumber {
-    public static final int MAX_COUNT_STEPS = 10;
+    public static final int MAX_COUNT_ATTEMPTS = 10;
 
     private Player firstPlayer;
     private Player secondPlayer;
@@ -15,38 +15,32 @@ public class GuessNumber {
     }
 
     public void startGame() {
-        generateSecretNumber();
-        
         firstPlayer.clearNumbers();
         secondPlayer.clearNumbers();
-        
-        Player currentPlayer = firstPlayer;
-        
+
         System.out.println("\n*** Игра началась!!! ***");
-        System.out.println("\n*** У каждого игрока по " + MAX_COUNT_STEPS + " попыток ***");
-        
-        int counter = 0;
-        int gameStep = 1;
-        while (gameStep <= MAX_COUNT_STEPS) {
+        System.out.println("\n*** У каждого игрока по " + MAX_COUNT_ATTEMPTS + " попыток ***");
+
+        generateSecretNumber();
+        boolean isWin = false;
+        Player currentPlayer = firstPlayer;
+        while (currentPlayer.getCountAttempts() != MAX_COUNT_ATTEMPTS && !isWin) {
             System.out.print("Число вводит игрок с именем " + currentPlayer.getName() + ": ");
-            int playerNumber = enterNumber();
-            
-            currentPlayer.setNumber(playerNumber, gameStep);
+            int playerNumber = enterNumber(currentPlayer);
             
             if (playerNumber != secretNumber) {
-                String moreLessStr = playerNumber > secretNumber ? "больше" : "меньше";
-                System.out.println("Данное число " + moreLessStr  + " того, что загадал компьютер!");
+                String moreLess = playerNumber > secretNumber ? "больше" : "меньше";
+                System.out.println("Данное число " + moreLess + " того, что загадал компьютер!");
 
                 currentPlayer = currentPlayer == firstPlayer ? secondPlayer : firstPlayer;//следующий игрок
             } else {
                 System.out.println("\nИгрок " + currentPlayer.getName() + " угадал число " + 
-                        playerNumber + " с " + gameStep + " попытки\n");
-                break;
+                        playerNumber + " с " + currentPlayer.getCountAttempts() + " попытки\n");
+                isWin = true;
             }
-            gameStep = currentStep(++counter, gameStep);
         }
         
-        if (gameStep > MAX_COUNT_STEPS) System.out.println("\nУ игрока " + currentPlayer.getName() + " закончились попытки\n");
+        if (currentPlayer.getCountAttempts() == MAX_COUNT_ATTEMPTS && !isWin) System.out.println("\nУ игрока " + currentPlayer.getName() + " закончились попытки\n");
         
         System.out.print("Игрок " + firstPlayer.getName() + " назвал числа: " );
         printNumbers(firstPlayer);
@@ -54,13 +48,10 @@ public class GuessNumber {
         printNumbers(secondPlayer);
     }
 
-    private int enterNumber() {
-        return new Scanner(System.in).nextInt();
-    }
-
-    private int currentStep(int counter, int step) {
-        step = counter % 2 == 0 ? ++step : step;
-        return step;
+    private int enterNumber(Player player) {
+        int number = new Scanner(System.in).nextInt();
+        player.setPlayerNumbers(number);
+        return number;
     }
 
     private void generateSecretNumber() {
@@ -69,7 +60,7 @@ public class GuessNumber {
     }
 
     private void printNumbers(Player player) {
-        for(int number: player.getEnteredNumbers()) {
+        for(int number: player.getPlayerNumbers()) {
             System.out.print(number + " ");
         }
     }
