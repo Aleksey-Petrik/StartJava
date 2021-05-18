@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int countAttempts = 0;
-    private int[] playerNumbers = new int[GuessNumber.MAX_COUNT_ATTEMPTS];
+    private int[] numbers = new int[GuessNumber.MAX_COUNT_ATTEMPTS];
 
     public Player(String name) {
         this.name = name;
@@ -15,20 +15,20 @@ public class Player {
         return name;
     }
     
-    public void setPlayerNumbers(int playerNumber) {
-        playerNumbers[countAttempts++] = playerNumber;
+    public void setNumbers(int playerNumber) {
+        numbers[countAttempts++] = playerNumber;
     }
     
-    public int[] getPlayerNumbers() {
-        return Arrays.copyOf(playerNumbers, countAttempts);
+    public int[] getNumbers() {
+        return Arrays.copyOf(numbers, countAttempts);
     }
 
-    public int getCountAttempts(){
+    public int getCountAttempts() {
         return countAttempts;
     }
 
     public void clearNumbers() {
-        Arrays.fill(playerNumbers, 0, countAttempts, 0);
+        Arrays.fill(numbers, 0, countAttempts, 0);
         countAttempts = 0;
     }
 }

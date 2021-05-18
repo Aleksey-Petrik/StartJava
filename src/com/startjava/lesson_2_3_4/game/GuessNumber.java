@@ -50,7 +50,7 @@ public class GuessNumber {
 
     private int enterNumber(Player player) {
         int number = new Scanner(System.in).nextInt();
-        player.setPlayerNumbers(number);
+        player.setNumbers(number);
         return number;
     }
 
@@ -60,7 +60,7 @@ public class GuessNumber {
     }
 
     private void printNumbers(Player player) {
-        for(int number: player.getPlayerNumbers()) {
+        for(int number: player.getNumbers()) {
             System.out.print(number + " ");
         }
     }
